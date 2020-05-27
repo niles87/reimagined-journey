@@ -2,7 +2,7 @@ const canvas = document.querySelector("#canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const numberOfParticles = 100;
+const numberOfParticles = 150;
 let particleArray = [];
 
 const mouse = {
@@ -41,7 +41,7 @@ class Particle {
     if (this.size < 0) {
       this.x = mouse.x + (Math.random() * 20 - 10);
       this.y = mouse.y + (Math.random() * 20 - 10);
-      this.size = Math.random() * 10 + 2;
+      this.size = Math.random() * 10 + 5;
       this.weight = Math.random() * 2 - 0.5;
     }
     this.y += this.weight;
@@ -58,8 +58,8 @@ function init() {
   for (let i = 0; i < numberOfParticles; i++) {
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
-    let size = Math.random() * 5 + 2;
-    let color = "black";
+    let size = Math.random() * 10 + 5;
+    let color = "orangered";
     let weight = 1;
     particleArray.push(new Particle(x, y, size, color, weight));
   }
